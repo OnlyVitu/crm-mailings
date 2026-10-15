@@ -1,0 +1,26 @@
+{
+  "name": "crm-mailings",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --port 8765",
+    "db:local": "wrangler d1 migrations apply crm-mailings --local",
+    "db:remote": "wrangler d1 migrations apply crm-mailings --remote",
+    "types": "wrangler types",
+    "test": "node --test tests/*.test.mjs",
+    "check": "wrangler deploy --dry-run",
+    "deploy": "wrangler deploy",
+    "admin:local": "node scripts/admin.mjs --local"
+  },
+  "dependencies": {
+    "fast-xml-parser": "5.11.2",
+    "fflate": "0.8.3"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20261015.1",
+    "esbuild": "0.28.2",
+    "miniflare": "5.20261012.0-beta",
+    "wrangler": "4.151.0"
+  }
+}
